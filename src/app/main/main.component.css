@@ -1,0 +1,41 @@
+section {
+  background: url("src/assets/lappy.jpg");
+  height: 92%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 7vw;
+  display: flex;
+  align-items: center;
+}
+.container {
+  position: relative;
+  align-items: center;
+  text-align: center;
+  padding: 3.2vw;
+  background: rgba(31, 26, 26, 0.2);
+  box-shadow: 15px 5px 15px rgba(0,0,0,.25);
+}
+.head {
+  font-size: 3.2vw;
+  line-height: 3.2vw;
+  color: rgb(16, 82, 82);
+  font-weight: bolder;
+}
+.subhead {
+  padding-top: 1.9vw;
+  font-size: 30px;
+  line-height: 40px;
+  color: rgb(16, 82, 82);
+}
+.info {
+  padding-top: 1.9vw;
+  font-size: 25px;
+  color: rgb(16, 82, 82);
+  font-weight: 500;
+}
+button {
+  margin-top: 1.3vw;
+  margin-right: 0.6vw;
+  background-color: rgb(78, 170, 170);
+}

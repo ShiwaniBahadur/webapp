@@ -1,0 +1,103 @@
+<mat-card>
+  <mat-toolbar>Add your Experience</mat-toolbar> <br>
+  <div class="icon">
+    <mat-icon>work</mat-icon>
+    <p> Add any developer/programming positions that you have had in the past </p>
+  </div>
+  <br>
+  * = required
+  <br> <br>
+  <form #editexperience = "ngForm" (ngSubmit)="onSubmit(editexperience)">
+
+    <input type="text" name="title" class="form-control" placeholder="Job Title *"
+    required
+    #title="ngModel"
+    [(ngModel)]="userservice.newUser.title"
+    [ngClass]="{'is-invalid':editexperience.submitted && editexperience.invalid}">
+
+    <br>
+
+    <div class="alert alert-danger" *ngIf = "editexperience.submitted && title.invalid">
+      <div *ngIf = "title.hasError('required')">
+        Required Field
+      </div>
+    </div>
+
+    <br>
+
+    <input type="text" name="company" class="form-control" placeholder="Company *"
+    required
+    #company="ngModel"
+    [(ngModel)]="userservice.newUser.company"
+    [ngClass]="{'is-invalid':editexperience.submitted && editexperience.invalid}">
+
+    <br>
+
+    <div class="alert alert-danger" *ngIf = "editexperience.submitted && company.invalid">
+      <div *ngIf = "company.hasError('required')">
+        Required Field
+      </div>
+    </div>
+
+    <br>
+
+    <input type="text" name="location" class="form-control" placeholder="Location *"
+    required
+    #location="ngModel"
+    [(ngModel)]="userservice.newUser.location"
+    [ngClass]="{'is-invalid':editexperience.submitted && editexperience.invalid}">
+
+    <br>
+
+    <div class="alert alert-danger" *ngIf = "editexperience.submitted && location.invalid">
+      <div *ngIf = "location.hasError('required')">
+        Required Field
+      </div>
+    </div>
+
+    <br>
+
+    <input type="number" name="start" class="form-control" placeholder="From (ex: 2017)  *"
+    required
+    #start="ngModel"
+    [(ngModel)]="userservice.newUser.start"
+    required
+    [ngClass]="{'is-invalid':editexperience.submitted && editexperience.invalid}">
+
+    <br>
+
+    <div class="alert alert-danger" *ngIf = "editexperience.submitted && start.invalid">
+      <div *ngIf = "start.hasError('required')">
+        Required Field
+      </div>
+    </div>
+
+    <br>
+
+    <input type="text" name="end" class="form-control" placeholder="To (ex: 2021 or current) *"
+    required
+    #end="ngModel"
+    [(ngModel)]="userservice.newUser.end"
+    [ngClass]="{'is-invalid':editexperience.submitted && editexperience.invalid}">
+
+    <br>
+
+    <div class="alert alert-danger" *ngIf = "editexperience.submitted && end.invalid">
+      <div *ngIf = "end.hasError('required')">
+        Required Field
+      </div>
+    </div>
+
+    <br>
+
+    <textarea name="job" class="form-control" placeholder="Job Description"
+    #job="ngModel"
+    [(ngModel)]="userservice.newUser.job"></textarea> <br>
+
+
+    <button class="btn btn1" type="submit">Save</button>
+    <button class="btn btn-secondary" (click)="onClick()">Go Back</button>
+
+  </form>
+
+</mat-card>

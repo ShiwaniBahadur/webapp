@@ -1,0 +1,31 @@
+.social {
+  display: flex;
+  margin-bottom: 1vw;
+}
+mat-card {
+  width: 60%;
+  margin: auto;
+}
+mat-toolbar {
+  color: rgb(16, 82, 82);
+}
+i {
+  padding-right: 1vw;
+}
+.icon {
+  display: flex;
+}
+mat-icon {
+  color: rgb(16, 82, 82);
+  margin-right: 4px;
+}
+a {
+  cursor: pointer;
+}
+button {
+  margin-right: 5px;
+}
+.btn1 {
+  background-color: rgb(16, 82, 82);
+  color: white;
+}

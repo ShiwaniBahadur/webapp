@@ -1,0 +1,56 @@
+<br><br>
+<mat-card>
+
+  <mat-toolbar> Add your Other Socials</mat-toolbar>
+  <br>
+
+  <form #editsocials="ngForm" (ngSubmit)="onSubmit(editsocials)">
+
+    <div class="social">
+      <i class="fa fa-globe fa-3x" ></i>
+      <input type="text" name="website" class="form-control" placeholder="Your Website"
+      #website="ngModel"
+      [(ngModel)]="userservice.newUser.website"> <br>
+    </div>
+
+    <div class="social">
+      <i class="fa fa-linkedin-square fa-3x"></i>
+      <input type="text" name="linkedin" class="form-control" placeholder="LinkedIn URL"
+      #linkedin="ngModel"
+      [(ngModel)]="userservice.newUser.linkedin"> <br>
+    </div>
+
+    <div class="social">
+      <i class="fa fa-github fa-3x"></i>
+      <input type="text" name="github" class="form-control" placeholder="Github URL"
+      #github="ngModel"
+      [(ngModel)]="userservice.newUser.github"> <br>
+    </div>
+
+    <div class="social">
+      <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+      <input type="text" name="twitter" class="form-control" placeholder="Twitter URL"
+      #twitter="ngModel"
+      [(ngModel)]="userservice.newUser.twitter"> <br>
+    </div>
+
+    <div class="social">
+      <i class="fa fa-instagram fa-3x"></i>
+      <input type="text" name="insta" class="form-control" placeholder="Instagram URL"
+      #insta="ngModel"
+      [(ngModel)]="userservice.newUser.insta"> <br>
+    </div>
+
+    <div class="social">
+      <i class="fa fa-facebook-official fa-3x"></i>
+      <input type="text" name="facebook" class="form-control" placeholder="Facebook URL"
+      #facebook="ngModel"
+      [(ngModel)]="userservice.newUser.facebook"> <br>
+    </div>
+
+    <button class="btn btn1" type="submit">Save</button>
+    <button class="btn btn-secondary" (click)="onClick()">Go Back</button>
+
+  </form>
+
+</mat-card>

@@ -1,0 +1,85 @@
+
+<br>
+
+<mat-card>
+  <mat-toolbar>Edit your Education</mat-toolbar>
+  <br>
+
+  *=required <br><br>
+
+  <form [formGroup]="editeducation" (ngSubmit)="onSubmit()">
+
+    <input type="text"
+    formControlName="school" class="form-control" placeholder="Add School or Institution you have attended *"
+    required
+    [ngClass]="{'is-invalid': submitted && f.school.errors}">
+
+    <br>
+
+    <div class="alert alert-danger" *ngIf="submitted && f.school.errors">
+      <div *ngIf = "f.school.errors?.required">
+        Required Field
+      </div>
+    </div>
+
+    <br>
+
+    <input type="text"
+    formControlName="degree" class="form-control" placeholder="Add your Degree"
+    required
+    [ngClass]="{'is-invalid': submitted && f.degree.errors}">
+
+    <br>
+
+    <div class="alert alert-danger" *ngIf="submitted && f.degree.errors">
+      <div *ngIf = "f.degree.errors?.required">
+        Required Field
+      </div>
+    </div>
+
+    <br>
+
+    <input type="number"
+    formControlName="from" class="form-control" placeholder="From (ex: 2017)  *"
+    required
+    [ngClass]="{'is-invalid': submitted && f.from.errors}">
+
+    <br>
+
+    <div class="alert alert-danger" *ngIf="submitted && f.from.errors">
+      <div *ngIf = "f.from.errors?.required">
+        Required Field
+      </div>
+    </div>
+
+    <br>
+
+    <input type="text"
+    formControlName="to" class="form-control" placeholder="To (ex: 2021 or current) *"
+    required
+    [ngClass]="{'is-invalid': submitted && f.to.errors}">
+
+    <br>
+
+    <div class="alert alert-danger" *ngIf="submitted && f.to.errors">
+      <div *ngIf = "f.to.errors?.required">
+        Required Field
+      </div>
+    </div>
+
+    <br>
+
+    <textarea formControlName="about" class="form-control" placeholder="About your Course"></textarea> <br>
+
+
+    <textarea formControlName="skills" class="form-control" placeholder="Other Skills"></textarea> <br>
+
+    <button class="btn btn1" type="submit">Save</button>
+    <button class="btn btn-secondary" (click)="onClick()">Go Back</button>
+  </form>
+
+</mat-card>
+
+<br>
+
+

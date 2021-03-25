@@ -1,0 +1,84 @@
+<mat-card>
+
+  <form #update="ngForm" (ngSubmit)= "onSubmit(update)">
+
+      <mat-toolbar> Edit Bio</mat-toolbar>
+
+      <br>
+
+    Name <input
+      type="text"
+      class="form-control"
+      required
+      name="name"
+      #name="ngModel"
+      [(ngModel)]="userservice.newUser.name"
+      [ngClass]="{'is-invalid':update.submitted && name.invalid}">
+
+      <div class="alert alert-danger" *ngIf = "update.submitted && name.invalid">
+        <div *ngIf = "name.hasError('required')">
+          Name is Required
+        </div>
+      </div>
+    <br>
+
+     Email <input
+      type="email"
+      class="form-control"
+      required
+      name="email"
+      #email="ngModel"
+      [(ngModel)]="userservice.newUser.email"
+      [ngClass]="{'is-invalid':update.submitted && email.invalid}">
+
+      <div class="alert alert-danger" *ngIf = "update.submitted && email.invalid">
+        <div *ngIf = "email.hasError('required')">
+          Email is Required
+        </div>
+      </div>
+
+    <br>
+
+      Profile <input
+      type="text"
+      class="form-control"
+      required
+      name="profile"
+      #profile="ngModel"
+      [(ngModel)]="userservice.newUser.profile"
+      [ngClass]="{'is-invalid':update.submitted && profile.invalid}">
+
+      <div class="alert alert-danger" *ngIf = "update.submitted && profile.invalid">
+        <div *ngIf = "profile.hasError('required')">
+          Designation is required
+        </div>
+      </div>
+
+    <br>
+
+     Address <input
+      type="text"
+      class="form-control"
+      required
+      name="address"
+      #address="ngModel"
+      [(ngModel)]="userservice.newUser.address"
+      [ngClass]="{'is-invalid':update.submitted && address.invalid}">
+
+      <div class="alert alert-danger" *ngIf = "update.submitted && address.invalid">
+        <div *ngIf = "address.hasError('required')">
+          Required Field
+        </div>
+      </div>
+
+    <br>
+
+    <button class="btn btn1" type="submit">Save</button>
+    <button class="btn btn-danger" (click)="onDelete()">Delete Account</button>
+
+      <br>
+
+    <button type="button" class="btn btn-link" (click)="onClick()">Go Back</button>
+  </form>
+</mat-card>
+

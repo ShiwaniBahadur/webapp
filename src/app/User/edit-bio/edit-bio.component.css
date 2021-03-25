@@ -1,0 +1,19 @@
+mat-card {
+  width: 60%;
+  margin: auto;
+}
+mat-toolbar {
+  color: rgb(16, 82, 82);
+  margin: auto;
+}
+button {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+button {
+  margin-right: 5px;
+}
+.btn1 {
+  background-color: rgb(16, 82, 82);
+  color: white;
+}

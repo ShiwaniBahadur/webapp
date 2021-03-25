@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(assets/images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						Sign In
+					</span>
+				</div>
+
+				<form class="login100-form validate-form" name="form"
+        #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && login(loginForm)" novalidate>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+
+						<input class="input100" type="email" name="email" placeholder="Enter email *"
+            #email="ngModel"
+            [(ngModel)]="userservice.existingUser.email"
+            required
+            [ngClass]="{'is-invalid':loginForm.submitted && loginForm.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf = "loginForm.submitted && email.invalid">
+            <div *ngIf = "email.hasError('required')">
+              Email is Required
+            </div>
+          </div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+
+						<input class="input100" type="password" name="password" placeholder="Enter password *"
+            #password="ngModel"
+            [(ngModel)]="userservice.existingUser.password"
+            required
+            [ngClass] = "{'is-inavlid':loginForm.submitted && password.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf="loginForm.submitted && password.invalid">
+            <div *ngIf = "password.hasError('required')">
+              Password is Required
+            </div>
+          </div>
+
+					<div class="container-login100-form-btn">
+            <br><br>
+						<button type="submit" class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+          <div class="flex-sb-m w-full p-b-30">
+						<div>
+              <br><br>
+							<a routerLink="/register" class="txt1">
+								Don't have an Account?
+							</a>
+						</div>
+					</div>
+
+          <div class="alert alert-success" role="alert" *ngIf = "showMessage">Logged in Successfully</div>
+          <div class="alert alert-warning" role="alert" *ngIf = "errorMessage">{{error}}</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

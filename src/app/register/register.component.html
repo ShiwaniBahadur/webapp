@@ -1,0 +1,384 @@
+<!-- <mat-card>
+  <mat-toolbar>Member Register</mat-toolbar>
+  <br>
+  <form #register="ngForm" (ngSubmit)= "onSubmit(register)">
+
+    <mat-form-field>
+      <input matInput type="text" name="name" placeholder="Enter Username"
+      required
+      #name="ngModel"
+      [(ngModel)]="userservice.newUser.name"
+      [ngClass]="{'is-invalid':register.submitted && name.invalid}">
+    </mat-form-field>
+
+    <mat-error *ngIf = "register.submitted && name.invalid">
+      <mat-error *ngIf = "name.hasError('required')">
+        Name is Required
+      </mat-error>
+    </mat-error>
+
+    <br>
+
+    <mat-form-field>
+      <input matInput type="email" name="email" placeholder="Enter Useremail"
+      required
+      #email="ngModel"
+      [(ngModel)]="userservice.newUser.email"
+      [ngClass]="{'is-invalid':register.submitted && name.invalid}">
+    </mat-form-field>
+
+    <mat-error *ngIf = "register.submitted && email.invalid">
+      <mat-error *ngIf = "email.hasError('required')">
+        Email is Required
+      </mat-error>
+    </mat-error>
+
+    <br>
+
+    <mat-form-field>
+      <input matInput type="text" name="profile" placeholder="Enter your work designation"
+      required
+      #profile="ngModel"
+      [(ngModel)]="userservice.newUser.profile"
+      [ngClass]="{'is-invalid':register.submitted && profile.invalid}">
+    </mat-form-field>
+
+    <mat-error *ngIf = "register.submitted && profile.invalid">
+      <mat-error *ngIf = "profile.hasError('required')">
+        Designation is Required
+      </mat-error>
+    </mat-error>
+
+    <br>
+
+    <mat-form-field>
+      <input matInput type="text" name="address" placeholder="Enter your Address"
+      required
+      #address="ngModel"
+      [(ngModel)]="userservice.newUser.address"
+      [ngClass]="{'is-invalid':register.submitted && address.invalid}">
+    </mat-form-field>
+
+    <mat-error *ngIf = "register.submitted && address.invalid">
+      <mat-error *ngIf = "address.hasError('required')">
+        Required Field
+      </mat-error>
+    </mat-error>
+
+    <br>
+
+    <mat-form-field>
+      <input matInput type="password" name="password" placeholder="Enter Password"
+      required
+      #password="ngModel"
+      [(ngModel)]="userservice.newUser.password"
+      [ngClass]="{'is-invalid':register.submitted && password.invalid}">
+    </mat-form-field>
+
+    <mat-error *ngIf = "register.submitted && password.invalid">
+      <mat-error *ngIf = "password.hasError('required')">
+        Password is Required
+      </mat-error>
+    </mat-error>
+
+    <br>
+
+    <mat-form-field>
+      <input matInput type="password" name="repass" placeholder="Re-Enter Password"
+      required
+      #repass="ngModel"
+      [(ngModel)]="userservice.newUser.repass"
+      [ngClass]="{'is-invalid':register.submitted && repass.invalid}">
+    </mat-form-field>
+
+    <mat-error *ngIf="register.submitted && repass.invalid">
+      <mat-error *ngIf="repass.hasError('required')">
+        Re-Enter your Password
+      </mat-error>
+      <mat-error *ngIf="repass.hasError('pattern')">
+        Password Must Match
+      </mat-error>
+    </mat-error>
+
+    <br><br>
+
+    <a class="link" (click)="toggle()">Add Other Information</a>
+    <span>Can be skipped for later</span>
+
+    <br><br>
+
+    <div *ngIf = "show">
+
+      <mat-toolbar class="hide">Add Your Eduaction</mat-toolbar> <br>
+
+
+        <input type="text" name="school" class="form-control" placeholder="Add School or Institution you have attended"
+          required
+          #school="ngModel"
+          [(ngModel)]="userservice.newUser.school"> <br>
+
+
+
+
+          <input type="text" name="degree" class="form-control" placeholder="Add your degree"
+          required
+          #degree="ngModel"
+          [(ngModel)]="userservice.newUser.degree"><br>
+
+          <input type="number" name="from" class="form-control" placeholder="From (ex: 2017)"
+          required
+          #from="ngModel"
+          [(ngModel)]="userservice.newUser.from"> <br>
+
+          <input type="text" name="to" class="form-control" placeholder="To (ex: 2021 or current)"
+          required
+          #to="ngModel"
+          [(ngModel)]="userservice.newUser.to"> <br>
+
+          <textarea name="about" class="form-control" placeholder="About your Course"
+          #about="ngModel"
+          [(ngModel)]="userservice.newUser.about"></textarea> <br>
+
+          <textarea name="skills" class="form-control" placeholder="Other Skills"
+          #skills="ngModel"
+          [(ngModel)]="userservice.newUser.skills"></textarea> <br>
+
+          <mat-toolbar class="hide">Add Your Experience</mat-toolbar> <br>
+
+          <input type="text" name="title" class="form-control" placeholder="Job Title"
+          #title="ngModel"
+          [(ngModel)]="userservice.newUser.title">
+
+          <br>
+
+          <input type="text" name="company" class="form-control" placeholder="Company"
+          #company="ngModel"
+          [(ngModel)]="userservice.newUser.company">
+
+          <br>
+
+          <input type="text" name="location" class="form-control" placeholder="Location"
+          #location="ngModel"
+          [(ngModel)]="userservice.newUser.location">
+
+          <br>
+
+          <input type="text" name="start" class="form-control" placeholder="From (ex: 2017)"
+          #start="ngModel"
+          [(ngModel)]="userservice.newUser.start"> <br>
+
+          <input type="text" name="end" class="form-control" placeholder="To (ex: 2021 or current)"
+          #end="ngModel"
+          [(ngModel)]="userservice.newUser.end"> <br>
+
+          <textarea name="job" class="form-control" placeholder="Job Description"
+          #job="ngModel"
+          [(ngModel)]="userservice.newUser.job"></textarea> <br>
+
+          <mat-toolbar class="hide">Add Your Other Socials</mat-toolbar> <br>
+
+          <div class="social">
+            <i class="fa fa-globe fa-3x" ></i>
+            <input type="text" name="website" class="form-control" placeholder="Your Website"
+            #website="ngModel"
+          [(ngModel)]="userservice.newUser.website"> <br>
+          </div>
+
+          <div class="social">
+            <i class="fa fa-linkedin-square fa-3x"></i>
+            <input type="text" name="linkedin" class="form-control" placeholder="LinkedIn URL"
+            #linkedin="ngModel"
+          [(ngModel)]="userservice.newUser.linkedin"> <br>
+          </div>
+
+          <div class="social">
+            <i class="fa fa-github fa-3x"></i>
+            <input type="text" name="github" class="form-control" placeholder="Github URL"
+            #github="ngModel"
+          [(ngModel)]="userservice.newUser.github"> <br>
+          </div>
+
+          <div class="social">
+            <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+            <input type="text" name="twitter" class="form-control" placeholder="Twitter URL"
+            #twitter="ngModel"
+          [(ngModel)]="userservice.newUser.twitter"> <br>
+          </div>
+
+          <div class="social">
+            <i class="fa fa-instagram fa-3x"></i>
+            <input type="text" name="insta" class="form-control" placeholder="Instagram URL"
+            #insta="ngModel"
+          [(ngModel)]="userservice.newUser.insta"> <br>
+          </div>
+
+          <div class="social">
+            <i class="fa fa-facebook-official fa-3x"></i>
+            <input type="text" name="facebook" class="form-control" placeholder="Facebook URL"
+            #facebook="ngModel"
+          [(ngModel)]="userservice.newUser.facebook"> <br>
+          </div>
+
+    </div>
+
+    <button mat-raised-button color="primary" type="submit"> Register </button>
+
+    <br><br>
+
+		<a routerLink="/login"> Already have an Account? </a>
+
+  </form>
+
+</mat-card> -->
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(assets/images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						Member Register
+					</span>
+				</div>
+
+				<form class="login100-form validate-form"
+        #register="ngForm" (ngSubmit)= "onSubmit(register)">
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Username is required">
+						<input class="input100" type="text" name="name" placeholder="Enter Username *"
+            required
+            #name="ngModel"
+            [(ngModel)]="userservice.newUser.name"
+            [ngClass]="{'is-invalid':register.submitted && name.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf = "register.submitted && name.invalid">
+            <div *ngIf = "name.hasError('required')">
+              Name is Required
+            </div>
+          </div>
+
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<input class="input100" type="email" name="email" placeholder="Enter Useremail *"
+            required
+            #email="ngModel"
+            [(ngModel)]="userservice.newUser.email"
+            [ngClass]="{'is-invalid':register.submitted && email.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf = "register.submitted && email.invalid">
+            <div *ngIf = "email.hasError('required')">
+              Email is Required
+            </div>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Username is required">
+						<input class="input100" type="text" name="profile" placeholder="Enter your work designation *"
+            required
+            #profile="ngModel"
+            [(ngModel)]="userservice.newUser.profile"
+            [ngClass]="{'is-invalid':register.submitted && profile.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf = "register.submitted && profile.invalid">
+            <div *ngIf = "profile.hasError('required')">
+              Designation is required
+            </div>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18">
+						<input class="input100" type="text" name="address" placeholder="Enter Address *"
+            required
+            #address="ngModel"
+            [(ngModel)]="userservice.newUser.address"
+            [ngClass]="{'is-invalid':register.submitted && address.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf = "register.submitted && address.invalid">
+            <div *ngIf = "address.hasError('required')">
+              Required Field
+            </div>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<input class="input100" type="password" name="password" placeholder="Enter Password *"
+            required
+            #password="ngModel"
+            [(ngModel)]="userservice.newUser.password"
+            [ngClass] = "{'is-inavlid':register.submitted && password.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf="register.submitted && password.invalid">
+            <div *ngIf = "password.hasError('required')">
+              Password is Required
+            </div>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Contact is required">
+						<input class="input100" type="password" name="repass" placeholder="Re-Enter Password *"
+            required
+            pattern = "{{password.value}}"
+            #repass="ngModel"
+            [(ngModel)]="userservice.newUser.repass"
+            [ngClass]="{'is-invalid':register.submitted && repass.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div *ngIf="register.submitted && repass.invalid">
+            <div class="alert alert-danger" *ngIf="repass.hasError('required')">
+              Re-Enter your Password
+            </div>
+            <div class="alert alert-danger" *ngIf="repass.hasError('pattern')">
+              Password Must Match
+            </div>
+          </div>
+
+          <br>
+
+
+
+    <br>
+
+					<div class="container-login100-form-btn">
+            <br><br>
+						<button class="login100-form-btn" type="submit">
+							Register
+						</button>
+					</div>
+
+          <div class="flex-sb-m w-full p-b-30">
+						<div>
+              <br><br>
+							<a routerLink="/login" class="txt1">
+								Already have an Account?
+							</a>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
