@@ -3,6 +3,7 @@ var api = require('./backend/Router/userRouter');
 var express = require('express');
 var bodyparser = require('body-parser');
 var cors = require('cors');
+const path = require('path');
 
 var app = express();
 
@@ -16,6 +17,9 @@ app.use('/', api);
 
 app.use(express.static(__dirname+"/dist/webapp/index.html"));
 
+app.get('/*', function(req, res){
+  res.sendFile(path.join(__dirname + '/dist/webapp/index.html'));
+})
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*'),
