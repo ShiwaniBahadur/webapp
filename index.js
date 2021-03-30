@@ -10,11 +10,11 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(cors());
 
-(app.use('/', api));
+
+app.use('/', api);
 
 
-
-setTimeout(app.use(express.static(__dirname+"/dist/webapp/index.html")), 15000);
+app.use(express.static(__dirname+"/dist/webapp/index.html"));
 
 
 app.use((req, res, next) => {
