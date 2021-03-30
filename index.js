@@ -13,16 +13,18 @@ app.use(cors());
 
 const port = process.env.PORT || 3000;
 
-app.use('/', api);
-
-app.use(express.static(__dirname+"/dist/webapp1/index.html"));
-
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*'),
   res.setHeader('Access-Control-Allow-Credentials' , true),
   res.setHeader('Access-Control-Allow-Methods' , 'GET, POST, DELETE, PUT, OPTIONS'),
   res.setHeader('Access-Control-Allow-Headers' , 'Origin, Content-Type, Accept')
 })
+
+app.use('/', api);
+
+app.use(express.static(__dirname+"/dist/webapp1/index.html"));
+
+
 
 app.get('/*', function(req, res){
   res.sendFile(path.join(__dirname + '/dist/webapp1/index.html'));
