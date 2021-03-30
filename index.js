@@ -10,8 +10,12 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(cors());
 
-app.use('/', api);
-app.use(express.static(__dirname+"/dist/webapp/index.html"));
+setTimeout(app.use('/', api), 30000);
+
+
+
+setTimeout(app.use(express.static(__dirname+"/dist/webapp/index.html")), 30000);
+
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*'),

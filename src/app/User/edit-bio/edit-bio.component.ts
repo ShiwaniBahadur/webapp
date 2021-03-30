@@ -92,17 +92,15 @@ export class EditBioComponent implements OnInit {
   }
 
   onDelete(){
-    this.userid=this.activatedRoute.queryParams.subscribe(params=>{
-      this.userid=params['id'];
-      console.log(this.userid)
+      console.log(this.userid);
       this.userservice.deleteUser(this.userid);
       this.router.navigateByUrl('/');
       alert("Account deleted Successfully");
       this.userservice.removeToken();
-    })
   }
 
   onClick(){
+    console.log(this.userid);
     this.router.navigate(['/profile'], {"queryParams": {id:this.userid}});
   }
 

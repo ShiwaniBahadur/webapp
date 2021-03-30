@@ -2,6 +2,7 @@ require('../Config/passportConfig');
 
 require('../Model/userModel');
 require('../Model/postModel');
+
 const mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
 
@@ -12,6 +13,36 @@ var user = mongoose.model('user');
 var post = mongoose.model('postUpload');
 
 var jwt = require('jsonwebtoken');
+
+// module.exports.addNewUser = expressAsyncHandler(async (req, res) => {
+//   var newUser = new user({
+//         name: req.body.name,
+//         email: req.body.email,
+//         profile: req.body.profile,
+//         address: req.body.address,
+//         password: req.body.password,
+//         school: req.body.school,
+//         degree: req.body.degree,
+//         from: req.body.from,
+//         to: req.body.to,
+//         about: req.body.about,
+//         skills: req.body.skills,
+//         title: req.body.title,
+//         company: req.body.company,
+//         location: req.body.location,
+//         start: req.body.start,
+//         end: req.body.end,
+//         job: req.body.job,
+//         website: req.body.website,
+//         linkedin: req.body.linkedin,
+//         github: req.body.github,
+//         twitter: req.body.twitter,
+//         insta: req.body.insta,
+//         facebook: req.body.facebook
+//   });
+//   const createdUser = await newUser.save();
+//   res.status(201).send({ message:'New User Created', newUser: createdUser});
+// })
 
 // Adding new user
 module.exports.addNewUser = (req, res) => {
