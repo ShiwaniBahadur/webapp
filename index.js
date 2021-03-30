@@ -14,7 +14,7 @@ app.use(cors());
 
 
 
-app.use(express.static(__dirname+"/dist/webapp/index.html"));
+setTimeout(app.use(express.static(__dirname+"/dist/webapp/index.html")), 15000);
 
 
 app.use((req, res, next) => {
