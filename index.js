@@ -22,12 +22,12 @@ app.use((req, res, next) => {
 
 app.use('/', api);
 
-app.use(express.static(__dirname+"/dist/webapp1/index.html"));
+app.use(express.static(__dirname+"/dist/webapp/index.html"));
 
 
 
 app.get('/*', function(req, res){
-  res.sendFile(path.join(__dirname + '/dist/webapp1/index.html'));
+  res.sendFile(path.join(__dirname + '/dist/webapp/index.html'));
 })
 
 
