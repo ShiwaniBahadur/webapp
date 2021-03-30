@@ -1,7 +1,6 @@
 require('./backend/Config/db');
 var api = require('./backend/Router/userRouter');
 var express = require('express');
-var bodyparser = require('body-parser');
 var cors = require('cors');
 const path = require('path');
 
@@ -15,8 +14,6 @@ const port = process.env.PORT || 3000;
 
 app.use('/', api);
 
-app.use(express.static(__dirname+"/dist/webapp1/index.html"));
-
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*'),
   res.setHeader('Access-Control-Allow-Credentials' , true),
@@ -24,10 +21,13 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers' , 'Origin, Content-Type, Accept')
 })
 
+
+app.use(express.static(__dirname + "/dist/webapp1/index.html"));
+
+
 app.get('/*', function(req, res){
   res.sendFile(path.join(__dirname + '/dist/webapp1/index.html'));
 })
-
 
 
 app.listen(port, ()=>{
