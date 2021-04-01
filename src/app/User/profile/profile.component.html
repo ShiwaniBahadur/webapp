@@ -1,63 +1,53 @@
+
 <br>
 <mat-toolbar> Welcome {{name}} </mat-toolbar>
- <br>
+<br>
+<mat-card>
+  <table class="table">
+    <tr>
+      <th>User Information</th>
+      <th><a (click)="edit()"><mat-icon> edit </mat-icon></a></th>
+    </tr>
+    <tr>
+      <td>Full Name</td>
+      <td>{{name}}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{email}}</td>
+    </tr>
+    <tr>
+      <td>Profile</td>
+      <td>{{profile}}</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>{{address}}</td>
+    </tr>
+  </table>
+</mat-card>
+<br>
 
-<!-- <div class="container"> -->
-  <mat-card>
-    <table class="table">
-      <tr>
-        <th>User Information</th>
-        <th><a (click)="edit()"><mat-icon> edit </mat-icon></a></th>
-      </tr>
-      <tr>
-        <td>Full Name</td>
-        <td>{{name}}</td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td>{{email}}</td>
-      </tr>
-      <tr>
-        <td>Profile</td>
-        <td>{{profile}}</td>
-      </tr>
-      <tr>
-        <td>Address</td>
-        <td>{{address}}</td>
-      </tr>
-    </table>
+<div class="below">
+  <mat-card class="card card1">
+  <h4 class="d-flex align-items-center mb-3 blue"><i class="material-icons text-info mr-2">business_center</i>Work Experience <a (click)="editExperience()"><i class="material-icons ex">edit</i></a></h4>
+  <div class="education">
+  {{title}} <br>
+  <div *ngIf="this.start!=null">
+  {{start}} - {{end}}
+  </div>
+  <div *ngIf="this.company!=null">
+  {{company}} <span>|</span> {{location}}
+  </div>
+  <div *ngIf="this.job!=null">
+  <span>Description: </span>  {{job}}
+  </div>
+  </div>
   </mat-card>
-
-<br>
-
-  <div class="below">
-
-    <mat-card class="card card1">
-      <h4 class="d-flex align-items-center mb-3 blue"><i class="material-icons text-info mr-2">business_center</i>Work Experience <a (click)="editExperience()"><i class="material-icons ex">edit</i></a></h4>
-
-                      <div class="education">
-
-                        {{title}} <br>
-                        <div *ngIf="this.start!=null">
-                          {{start}} - {{end}}
-                        </div>
-
-                        <div *ngIf="this.company!=null">
-                          {{company}} <span>|</span> {{location}}
-                        </div>
-
-
-                        <div *ngIf="this.job!=null">
-                          <span>Description: </span>  {{job}}
-                        </div>
-
-                    </div>
-    </mat-card>
-
-<br>
+  <br>
 
     <mat-card class="card card2">
-      <h4 class="blue"><i class="material-icons text-info mr-2">school</i>Education <a (click)="editEducation()"><i class="material-icons ed">edit</i></a></h4>
+      <h4 class="d-flex align-items-center mb-3 blue"><i class="material-icons text-info mr-2 ">school</i>Education <a (click)="editEducation()"><i class="material-icons ed">edit</i></a></h4>
 
 
 
@@ -143,5 +133,4 @@
 
 
 
-<!-- </div> -->
 

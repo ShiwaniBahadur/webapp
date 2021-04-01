@@ -12,7 +12,8 @@ export class MainComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+
   }
 
   onLogin(){

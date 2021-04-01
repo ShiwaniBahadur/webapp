@@ -27,9 +27,18 @@ mat-icon {
   width: 60%;
   margin: auto;
 }
+.card1 {
+  width: 30%;
+}
+.card2 {
+  width: 30%;
+}
+.card3 {
+  width: 40%;
+}
 .card {
   margin: 2px;
-  width: 33%;
+  /* width: 33%; */
 }
 .ed {
   color: rgb(16, 82, 82);
@@ -41,14 +50,28 @@ mat-icon {
   padding-left: 20px;
   color: rgb(16, 82, 82);
 }
-
 a:hover {
   cursor: pointer;
 }
 button {
-  margin-left: 40vh;
+  margin-left: 40%;
   font-size: 3vh;
 }
+
+th {
+  color: rgb(16, 82, 82);
+}
+
+body {
+  margin-top: 20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #e2e8f0;
+}
+.main-body {
+  padding: 15px;
+}
+
 @media screen and (max-width: 1400px) {
   .below {
     display: unset;
