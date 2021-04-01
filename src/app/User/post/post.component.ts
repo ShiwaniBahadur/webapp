@@ -71,13 +71,14 @@ export class PostComponent implements OnInit {
         // console.log(this.userid);
        // console.log(F.value);
     this.userservice.postCreate(this.userid, F.value).subscribe((res)=>{
+      this.ngOnInit();
       // console.log(res);
     })
   },(err)=>{
       console.log(err);
     })
     // @ts-ignore
-    this._document.defaultView.location.reload();
+    // this._document.defaultView.location.reload();
   }
 }
 
