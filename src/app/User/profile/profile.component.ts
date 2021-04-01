@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
 
   userid:any;
   UserDetails:any=[];
+
   name: String="";
   profile: String="";
   email: String="";
@@ -79,7 +80,8 @@ export class ProfileComponent implements OnInit {
         this.twitter=this.UserDetails.data.twitter;
         this.insta=this.UserDetails.data.insta;
         this.facebook=this.UserDetails.data.facebook;
-        console.log(this.UserDetails.data.name);
+
+        //console.log(this.UserDetails.data.name);
 
         // console.log(res);
       });
@@ -113,6 +115,13 @@ export class ProfileComponent implements OnInit {
     this.userid=this.activatedRoute.queryParams.subscribe(params=>{
       this.userid=params['id'];
       this.router.navigate(['/add-socials'], {"queryParams": {id:this.userid}});
+      })
+  }
+
+  toFeed(){
+    this.userid=this.activatedRoute.queryParams.subscribe(params=>{
+      this.userid=params['id'];
+      this.router.navigate(['/post'], {"queryParams": {id:this.userid}});
       })
   }
 

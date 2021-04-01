@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(F: NgForm){
     if(!F.invalid){
     this.userservice.addnewUser(F.value).subscribe((res)=>{
-      console.log(res);
+      // console.log(res);
       this.router.navigateByUrl('/login')
     },(err)=>{
       console.log(err);

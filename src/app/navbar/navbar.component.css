@@ -1,9 +1,16 @@
-.navbar{
-  background-color: #3D4852;
+.navbar {
+  background-color: #3d4852;
 }
-a{
+a {
   color: aliceblue;
 }
-a:hover{
+a:hover {
+  color: maroon;
+}
+.profile {
+  color: white;
+  cursor: pointer;
+}
+.profile:hover {
   color: maroon;
 }

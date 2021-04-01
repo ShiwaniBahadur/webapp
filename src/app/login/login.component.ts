@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/profile'], {"queryParams": {id:this.id}});
       this.showMessage = true;
     }, (err)=>{
-      console.log(err);
       this.errorMessage=true;
       this.error = JSON.stringify(err);
       console.log(err);

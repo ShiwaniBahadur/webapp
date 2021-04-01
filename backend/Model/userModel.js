@@ -19,6 +19,8 @@ var userSchema = mongoose.Schema({
       type: String,
       required: true
     },
+
+
     school:{
       type: String,
     },
@@ -37,6 +39,8 @@ var userSchema = mongoose.Schema({
     skills:{
       type: String
     },
+
+
     title:{
       type: String
     },
@@ -55,6 +59,8 @@ var userSchema = mongoose.Schema({
     job:{
       type: String
     },
+
+
     website:{
       type: String
     },
@@ -73,6 +79,7 @@ var userSchema = mongoose.Schema({
     facebook:{
       type: String
     },
+
     password:{
       type: String,
       required: true

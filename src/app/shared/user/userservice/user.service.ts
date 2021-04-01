@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
-import { loginUser, User } from '../usermodel/user.model';
+import { createPost, loginUser, User } from '../usermodel/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +40,10 @@ export class UserService {
     password: ''
   }
 
+  newPost: createPost = {
+    posts: ''
+  }
+
   constructor(
     private http: HttpClient
   ) { }
@@ -50,6 +54,14 @@ export class UserService {
 
   login(loginuser: loginUser){
     return this.http.post(environment.apiBaseUrl + 'webapp/auth', loginuser);
+  }
+
+  postCreate(id: string, newposts: createPost ){
+    return this.http.post(environment.apiBaseUrl + 'webapp/createPost/' + id , newposts);
+  }
+
+  displayPost(){
+    return this.http.get(environment.apiBaseUrl+'webapp/getPost');
   }
 
   getSelectedUser(id: string){

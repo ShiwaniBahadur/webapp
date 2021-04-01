@@ -95,7 +95,7 @@ export class AddEducationComponent implements OnInit {
       this.userid=this.activatedroute.queryParams.subscribe(params=>{
         this.userid=params['id'];
         this.userservice.updateUserBio(this.userid, this.editeducation.value).subscribe((res)=>{
-          console.log(res);
+          // console.log(res);
         })
         this.router.navigate(['/profile'], {"queryParams": {id:this.userid}});
       })

@@ -74,11 +74,16 @@
     <br>
 
     <button class="btn btn1" type="submit">Save</button>
-    <button class="btn btn-danger" (click)="onDelete()">Delete Account</button>
+    <button class="btn btn-danger" (click)="onDelete(this.UserDetails.data._id)">Delete Account</button>
+
 
       <br>
 
-    <button type="button" class="btn btn-link" (click)="onClick()">Go Back</button>
+      <button type="button" class="btn btn-link" (click)="onClick()">Go Back</button>
   </form>
+
+
 </mat-card>
+
+
 

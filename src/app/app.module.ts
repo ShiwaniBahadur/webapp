@@ -12,7 +12,6 @@ import { MainComponent } from './main/main.component';
 import { ProfileComponent } from './User/profile/profile.component'
 import { NavbarComponent } from './navbar/navbar.component';
 import { EditBioComponent } from './User/edit-bio/edit-bio.component';
-import { AboutComponent } from './User/about/about.component';
 import { AddEducationComponent } from './User/add-education/add-education.component';
 import { AddExperienceComponent } from './User/add-experience/add-experience.component';
 import { AddSocialsComponent } from './User/add-socials/add-socials.component';
@@ -31,6 +30,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { PostComponent } from './User/post/post.component';
 
 
 @NgModule({
@@ -42,10 +42,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     NavbarComponent,
     MainComponent,
     EditBioComponent,
-    AboutComponent,
     AddEducationComponent,
     AddExperienceComponent,
-    AddSocialsComponent
+    AddSocialsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

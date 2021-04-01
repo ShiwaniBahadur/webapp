@@ -1,3 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(assets/images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						Member Register
+					</span>
+				</div>
+
+				<form class="login100-form validate-form"
+        #register="ngForm" (ngSubmit)= "onSubmit(register)">
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Username is required">
+						<input class="input100" type="text" name="name" placeholder="Enter Username *"
+            required
+            #name="ngModel"
+            [(ngModel)]="userservice.newUser.name"
+            [ngClass]="{'is-invalid':register.submitted && name.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf = "register.submitted && name.invalid">
+            <div *ngIf = "name.hasError('required')">
+              Name is Required
+            </div>
+          </div>
+
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<input class="input100" type="email" name="email" placeholder="Enter Useremail *"
+            required
+            #email="ngModel"
+            [(ngModel)]="userservice.newUser.email"
+            [ngClass]="{'is-invalid':register.submitted && email.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf = "register.submitted && email.invalid">
+            <div *ngIf = "email.hasError('required')">
+              Email is Required
+            </div>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Username is required">
+						<input class="input100" type="text" name="profile" placeholder="Enter your work designation *"
+            required
+            #profile="ngModel"
+            [(ngModel)]="userservice.newUser.profile"
+            [ngClass]="{'is-invalid':register.submitted && profile.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf = "register.submitted && profile.invalid">
+            <div *ngIf = "profile.hasError('required')">
+              Designation is required
+            </div>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18">
+						<input class="input100" type="text" name="address" placeholder="Enter Address *"
+            required
+            #address="ngModel"
+            [(ngModel)]="userservice.newUser.address"
+            [ngClass]="{'is-invalid':register.submitted && address.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf = "register.submitted && address.invalid">
+            <div *ngIf = "address.hasError('required')">
+              Required Field
+            </div>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<input class="input100" type="password" name="password" placeholder="Enter Password *"
+            required
+            #password="ngModel"
+            [(ngModel)]="userservice.newUser.password"
+            [ngClass] = "{'is-inavlid':register.submitted && password.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="alert alert-danger" *ngIf="register.submitted && password.invalid">
+            <div *ngIf = "password.hasError('required')">
+              Password is Required
+            </div>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Contact is required">
+						<input class="input100" type="password" name="repass" placeholder="Re-Enter Password *"
+            required
+            pattern = "{{password.value}}"
+            #repass="ngModel"
+            [(ngModel)]="userservice.newUser.repass"
+            [ngClass]="{'is-invalid':register.submitted && repass.invalid}">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div *ngIf="register.submitted && repass.invalid">
+            <div class="alert alert-danger" *ngIf="repass.hasError('required')">
+              Re-Enter your Password
+            </div>
+            <div class="alert alert-danger" *ngIf="repass.hasError('pattern')">
+              Password Must Match
+            </div>
+          </div>
+
+          <br>
+
+
+
+    <br>
+
+					<div class="container-login100-form-btn">
+            <br><br>
+						<button class="login100-form-btn" type="submit">
+							Register
+						</button>
+					</div>
+
+          <div class="flex-sb-m w-full p-b-30">
+						<div>
+              <br><br>
+							<a routerLink="/login" class="txt1">
+								Already have an Account?
+							</a>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <mat-card>
   <mat-toolbar>Member Register</mat-toolbar>
   <br>
@@ -239,146 +419,3 @@
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(assets/images/bg-01.jpg);">
-					<span class="login100-form-title-1">
-						Member Register
-					</span>
-				</div>
-
-				<form class="login100-form validate-form"
-        #register="ngForm" (ngSubmit)= "onSubmit(register)">
-
-          <div class="wrap-input100 validate-input m-b-18" data-validate = "Username is required">
-						<input class="input100" type="text" name="name" placeholder="Enter Username *"
-            required
-            #name="ngModel"
-            [(ngModel)]="userservice.newUser.name"
-            [ngClass]="{'is-invalid':register.submitted && name.invalid}">
-						<span class="focus-input100"></span>
-					</div>
-
-          <div class="alert alert-danger" *ngIf = "register.submitted && name.invalid">
-            <div *ngIf = "name.hasError('required')">
-              Name is Required
-            </div>
-          </div>
-
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<input class="input100" type="email" name="email" placeholder="Enter Useremail *"
-            required
-            #email="ngModel"
-            [(ngModel)]="userservice.newUser.email"
-            [ngClass]="{'is-invalid':register.submitted && email.invalid}">
-						<span class="focus-input100"></span>
-					</div>
-
-          <div class="alert alert-danger" *ngIf = "register.submitted && email.invalid">
-            <div *ngIf = "email.hasError('required')">
-              Email is Required
-            </div>
-          </div>
-
-          <div class="wrap-input100 validate-input m-b-18" data-validate = "Username is required">
-						<input class="input100" type="text" name="profile" placeholder="Enter your work designation *"
-            required
-            #profile="ngModel"
-            [(ngModel)]="userservice.newUser.profile"
-            [ngClass]="{'is-invalid':register.submitted && profile.invalid}">
-						<span class="focus-input100"></span>
-					</div>
-
-          <div class="alert alert-danger" *ngIf = "register.submitted && profile.invalid">
-            <div *ngIf = "profile.hasError('required')">
-              Designation is required
-            </div>
-          </div>
-
-          <div class="wrap-input100 validate-input m-b-18">
-						<input class="input100" type="text" name="address" placeholder="Enter Address *"
-            required
-            #address="ngModel"
-            [(ngModel)]="userservice.newUser.address"
-            [ngClass]="{'is-invalid':register.submitted && address.invalid}">
-						<span class="focus-input100"></span>
-					</div>
-
-          <div class="alert alert-danger" *ngIf = "register.submitted && address.invalid">
-            <div *ngIf = "address.hasError('required')">
-              Required Field
-            </div>
-          </div>
-
-          <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-						<input class="input100" type="password" name="password" placeholder="Enter Password *"
-            required
-            #password="ngModel"
-            [(ngModel)]="userservice.newUser.password"
-            [ngClass] = "{'is-inavlid':register.submitted && password.invalid}">
-						<span class="focus-input100"></span>
-					</div>
-
-          <div class="alert alert-danger" *ngIf="register.submitted && password.invalid">
-            <div *ngIf = "password.hasError('required')">
-              Password is Required
-            </div>
-          </div>
-
-          <div class="wrap-input100 validate-input m-b-18" data-validate = "Contact is required">
-						<input class="input100" type="password" name="repass" placeholder="Re-Enter Password *"
-            required
-            pattern = "{{password.value}}"
-            #repass="ngModel"
-            [(ngModel)]="userservice.newUser.repass"
-            [ngClass]="{'is-invalid':register.submitted && repass.invalid}">
-						<span class="focus-input100"></span>
-					</div>
-
-          <div *ngIf="register.submitted && repass.invalid">
-            <div class="alert alert-danger" *ngIf="repass.hasError('required')">
-              Re-Enter your Password
-            </div>
-            <div class="alert alert-danger" *ngIf="repass.hasError('pattern')">
-              Password Must Match
-            </div>
-          </div>
-
-          <br>
-
-
-
-    <br>
-
-					<div class="container-login100-form-btn">
-            <br><br>
-						<button class="login100-form-btn" type="submit">
-							Register
-						</button>
-					</div>
-
-          <div class="flex-sb-m w-full p-b-30">
-						<div>
-              <br><br>
-							<a routerLink="/login" class="txt1">
-								Already have an Account?
-							</a>
-						</div>
-					</div>
-
-				</form>
-			</div>
-		</div>
-	</div>
-
-</body>
-</html>

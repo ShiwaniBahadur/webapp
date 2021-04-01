@@ -1,0 +1,47 @@
+<br>
+<mat-card>
+  <mat-toolbar>
+    Post Something
+  </mat-toolbar>
+  <br>
+  <form #postform="ngForm" (ngSubmit) = "onSubmit(postform)">
+
+      <textarea type="text" class="form-control" rows='4' placeholder="Write something to post"
+      name="posts"
+      required
+      #posts="ngModel"
+      [(ngModel)]="userservice.newPost.posts"
+      [ngClass]="{'is-invalid':postform.submitted && posts.invalid}"></textarea>
+
+    <div class="alert alert-danger" *ngIf = "postform.submitted && posts.invalid">
+      <div *ngIf = "posts.hasError('required')">
+        Write Something
+      </div>
+    </div>
+
+    <br>
+
+    <button class="btn btn1" type="submit">
+    Create Post
+    </button>
+
+  </form>
+</mat-card>
+
+<br><br>
+
+<div>
+
+    <mat-toolbar class="two">Your Posts</mat-toolbar>
+
+    <div class="main" *ngFor="let users of UserPosts.data">
+
+      <div class="list" *ngIf="this.id==users.user">
+
+        <div class="post">{{users.posts}}</div>
+        <div class="date">Created on {{users.date}} by {{this.name}}</div>
+
+      </div>
+    </div>
+
+  </div>

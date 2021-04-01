@@ -33,9 +33,10 @@ routes.put('/webapp/updateInfo/:id', userControl.updateRecord);
 // Deleting user
 routes.delete('/webapp/deleteUser/:id', userControl.deleteUser);
 
-// Post Upload
-routes.get('/file', userControl.fileUpload);
+// create post
+routes.post('/webapp/createPost/:id', userControl.createPost);
 
-routes.post('/webapp/postUpload', userControl.uploadPost);
+//display post
+routes.get('/webapp/getPost', userControl.selectPost);
 
 module.exports = routes;

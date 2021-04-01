@@ -33,3 +33,6 @@ export class loginUser {
   password!: string;
 }
 
+export class createPost {
+  posts!: string;
+}

@@ -1,0 +1,41 @@
+mat-card {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+mat-form-field,
+textarea,
+input {
+  width: 100%;
+}
+mat-toolbar {
+  color: rgb(16, 82, 82);
+  margin: auto;
+}
+.btn1 {
+  background-color: rgb(16, 82, 82);
+  color: white;
+}
+.date {
+  text-align: right;
+  color: rgb(158, 69, 69);
+}
+.post {
+  font-size: 3vh;
+  color: black;
+  line-height: 25px;
+}
+.two {
+  width: 80%;
+  color: rgb(158, 69, 69);
+  margin-bottom: 30px;
+}
+.main {
+  width: 80%;
+  margin: auto;
+}
+.list {
+  border: 1px solid #909396;
+  padding: 15px;
+  margin-bottom: 20px;
+}

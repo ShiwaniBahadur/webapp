@@ -9,8 +9,8 @@
 <nav class="navbar justify-content-between" *ngIf="userservice.getToken() != null">
   <a class="nav-item nav-link active" routerLink="/"><i class="fa fa-code fa-2x" aria-hidden="true">Dev Connector</i></a>
   <form class="form-inline">
-      <a class="nav-item nav-link" routerLink="/post">Feed</a>
-      <a class="nav-item nav-link" routerLink="/profile">View Profile</a>
+      <a class="nav-item nav-link" (click)="onPost()" routerLink=''>Feed</a>
+      <a class="nav-item nav-link profile" (click)="onProfile()" routerLink=''>View Profile</a>
       <a class="nav-item nav-link" (click)="onLogout()" routerLink="/">Logout</a>
   </form>
 </nav>

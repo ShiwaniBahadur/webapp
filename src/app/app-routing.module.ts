@@ -9,6 +9,7 @@ import { EditBioComponent } from './User/edit-bio/edit-bio.component';
 import { AddEducationComponent } from './User/add-education/add-education.component';
 import { AddExperienceComponent } from './User/add-experience/add-experience.component';
 import { AddSocialsComponent } from './User/add-socials/add-socials.component';
+import { PostComponent } from './User/post/post.component';
 
 const routes: Routes = [
   {
@@ -30,19 +31,27 @@ const routes: Routes = [
   },
   {
     path: 'add-education',
-    component: AddEducationComponent
+    component: AddEducationComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'add-experience',
-    component: AddExperienceComponent
+    component: AddExperienceComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'add-socials',
-    component: AddSocialsComponent
+    component: AddSocialsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:'edit-bio',
     component: EditBioComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'post',
+    component: PostComponent,
     canActivate: [AuthGuard]
   }
 
