@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use('/', api);
 
-app.use(express.static(__dirname+"/dist/webapp1"));
+app.use(express.static(__dirname+"/dist/webapp"));
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*'),
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 
 app.get('/*', function(req, res){
-  res.sendFile(__dirname+"/dist/webapp1/index.html");
+  res.sendFile(__dirname+"/dist/webapp/index.html");
 })
 
 
