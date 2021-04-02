@@ -48,48 +48,49 @@ export class UserService {
     private http: HttpClient
   ) { }
 
+  // environment.apiBaseUrl +
   addnewUser(newuser: User){
-    return this.http.post(environment.apiBaseUrl + 'webapp/newUser', newuser);
+    return this.http.post('/webapp/newUser', newuser);
   }
 
   login(loginuser: loginUser){
-    return this.http.post(environment.apiBaseUrl + 'webapp/auth', loginuser);
+    return this.http.post('/webapp/auth', loginuser);
   }
 
   postCreate(id: string, newposts: createPost ){
-    return this.http.post(environment.apiBaseUrl + 'webapp/createPost/' + id , newposts);
+    return this.http.post('/webapp/createPost/' + id , newposts);
   }
 
   displayPost(){
-    return this.http.get(environment.apiBaseUrl+'webapp/getPost');
+    return this.http.get('/webapp/getPost');
   }
 
   getSelectedUser(id: string){
-    return this.http.get(environment.apiBaseUrl+'webapp/user/'+ id);
+    return this.http.get('/webapp/user/'+ id);
   }
 
   getSelectedUserInfo(id: string){
-    return this.http.get(environment.apiBaseUrl+'webapp/userInfo/'+ id);
+    return this.http.get('/webapp/userInfo/'+ id);
   }
 
   getSelectedUserEducation(id: string){
-    return this.http.get(environment.apiBaseUrl+'webapp/userEducation/'+ id);
+    return this.http.get('/webapp/userEducation/'+ id);
   }
 
   getSelectedUserExperience(id: string){
-    return this.http.get(environment.apiBaseUrl+'webapp/userExperience/'+ id);
+    return this.http.get('/webapp/userExperience/'+ id);
   }
 
   getSelectedUserSocials(id: string){
-    return this.http.get(environment.apiBaseUrl+'webapp/userSocials/'+ id);
+    return this.http.get('/webapp/userSocials/'+ id);
   }
 
   updateUserBio(id: string, newuser: User){
-    return this.http.put(environment.apiBaseUrl + 'webapp/updateInfo/' + id, newuser);
+    return this.http.put('/webapp/updateInfo/' + id, newuser);
   }
 
   deleteUser(id: string){
-    return this.http.delete(environment.apiBaseUrl + 'webapp/deleteUser/' + id);
+    return this.http.delete('/webapp/deleteUser/' + id);
   }
 
   // functions for token
