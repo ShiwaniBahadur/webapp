@@ -41,6 +41,7 @@ button {
 }
 @media screen and (max-width: 530px) {
   section {
+    background: none;
     height: 60%;
   }
 }
