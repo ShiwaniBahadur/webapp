@@ -81,3 +81,8 @@ th {
     display: none;
   }
 }
+
+.main {
+  color: #333c44;
+  font-weight: bold;
+}

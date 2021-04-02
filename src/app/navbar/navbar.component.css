@@ -14,7 +14,9 @@ a:hover {
 .profile:hover {
   color: maroon;
 }
-@media screen and (max-width: 530px) {
+
+/* @media screen and (max-width: 530px) {
+
   .feed {
     padding-left: 50px;
     align-items: center;
@@ -28,4 +30,4 @@ a:hover {
   .register {
     padding-left: 70px;
   }
-}
+} */

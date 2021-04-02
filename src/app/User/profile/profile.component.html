@@ -35,13 +35,13 @@
   <mat-card class="card card1">
   <h4 class="d-flex align-items-center mb-3 blue"><i class="material-icons text-info mr-2">business_center</i>Work Experience <a (click)="editExperience()"><i class="material-icons ex">edit</i></a></h4>
   <div class="education">
-  {{title}} <br>
+    <span class="main">{{title}} </span><br>
   <div *ngIf="this.start!=null">
   {{start}} - {{end}}
   </div>
   <div *ngIf="this.company!=null">
   {{company}} <span>|</span> {{location}}
-  </div>
+  </div> <br>
   <div *ngIf="this.job!=null">
   <b><span>Description: </span></b>  {{job}}
   </div>
@@ -56,15 +56,15 @@
 
       <div class="education">
 
-        {{school}}  <br>
+        <span class="main">{{school}}</span>  <br>
         <div *ngIf="this.degree!=null">
           {{degree}} <span>|</span> {{from}} - {{to}} <br>
         </div>
-
+        <br>
         <div *ngIf='this.about!=null'>
           <b><span>Description: </span></b>  {{about}}
         </div>
-
+        <br>
         <div *ngIf="this.skills!=null">
           <b><span>Other Skills: </span></b> {{skills}}
         </div>
