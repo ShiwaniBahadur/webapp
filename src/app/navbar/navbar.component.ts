@@ -46,6 +46,7 @@ export class NavbarComponent implements OnInit {
   onLogout(){
     alert("Logged Out Successfully");
     this.userservice.removeToken();
+    this.router.navigateByUrl('/');
   }
 
 }

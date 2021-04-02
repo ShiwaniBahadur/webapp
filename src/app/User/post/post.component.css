@@ -21,9 +21,7 @@ mat-toolbar {
   color: rgb(158, 69, 69);
 }
 .post {
-  font-size: 3vh;
   color: black;
-  line-height: 25px;
 }
 .two {
   width: 80%;

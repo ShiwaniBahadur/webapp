@@ -1,8 +1,10 @@
 
 <br>
-<mat-toolbar> Welcome {{name}} </mat-toolbar>
-<br>
-<mat-card>
+
+<div class="container">
+  <mat-toolbar> Welcome {{name}} </mat-toolbar>
+  <mat-card class="head">Welcome {{name}}</mat-card>
+  <br>
   <table class="table">
     <tr>
       <th>User Information</th>
@@ -25,7 +27,8 @@
       <td>{{address}}</td>
     </tr>
   </table>
-</mat-card>
+</div>
+
 <br>
 
 <div class="below">
@@ -40,7 +43,7 @@
   {{company}} <span>|</span> {{location}}
   </div>
   <div *ngIf="this.job!=null">
-  <span>Description: </span>  {{job}}
+  <b><span>Description: </span></b>  {{job}}
   </div>
   </div>
   </mat-card>
@@ -59,11 +62,11 @@
         </div>
 
         <div *ngIf='this.about!=null'>
-          <span>Description: </span>  {{about}}
+          <b><span>Description: </span></b>  {{about}}
         </div>
 
         <div *ngIf="this.skills!=null">
-          <span>Other Skills: </span> {{skills}}
+          <b><span>Other Skills: </span></b> {{skills}}
         </div>
 
       </div>
@@ -129,7 +132,10 @@
 
   <br>
 
-  <button class="btn btn-link" (click)="toFeed()"> Click here to post something</button>
+  <div class="container">
+    <button class="btn btn-link" (click)="toFeed()"> Click here to post something</button>
+  </div>
+
 
 
 

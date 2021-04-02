@@ -225,9 +225,9 @@ module.exports.updateRecord = (req, res) =>{
   user.findByIdAndUpdate({_id:id}, {$set: updatedData}).then((docs)=>{
     return res.status(200).json({
       success: true,
+      new: true,
       message: "Updated Successfully",
-      data: docs,
-      new: true
+      data: docs
     })
   }).catch((err)=>{
     return res.status(401).json({

@@ -85,6 +85,7 @@ export class ProfileComponent implements OnInit {
 
         // console.log(res);
       });
+
     },(err)=>{
       console.log(err);
     })
@@ -94,6 +95,7 @@ export class ProfileComponent implements OnInit {
     this.userid=this.activatedRoute.queryParams.subscribe(params=>{
     this.userid=params['id'];
     this.router.navigate(['/edit-bio'], {"queryParams": {id:this.userid}});
+    this.ngOnInit();
     })
   }
 

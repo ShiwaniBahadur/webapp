@@ -14,3 +14,18 @@ a:hover {
 .profile:hover {
   color: maroon;
 }
+@media screen and (max-width: 530px) {
+  .feed {
+    padding-left: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  .active {
+    padding-left: 50px;
+  }
+}
+@media screen and (max-width: 458px) {
+  .register {
+    padding-left: 70px;
+  }
+}

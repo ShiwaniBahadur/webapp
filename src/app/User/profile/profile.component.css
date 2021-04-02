@@ -3,10 +3,10 @@ i {
 }
 mat-toolbar {
   color: rgb(16, 82, 82);
-  width: 80%;
-  margin: auto;
+  /* width: 80%; */
+  /* margin: auto; */
 }
-mat-card {
+.container {
   width: 60%;
   margin: auto;
 }
@@ -53,23 +53,8 @@ mat-icon {
 a:hover {
   cursor: pointer;
 }
-button {
-  margin-left: 40%;
-  font-size: 3vh;
-}
-
 th {
   color: rgb(16, 82, 82);
-}
-
-body {
-  margin-top: 20px;
-  color: #1a202c;
-  text-align: left;
-  background-color: #e2e8f0;
-}
-.main-body {
-  padding: 15px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -79,5 +64,20 @@ body {
   .card {
     width: 60%;
     margin: auto;
+  }
+}
+.head {
+  background-color: rgb(177, 248, 248);
+  color: rgb(16, 82, 82);
+}
+
+@media screen and (max-width: 427px) {
+  mat-toolbar {
+    display: none;
+  }
+}
+@media screen and (min-width: 427px) {
+  .head {
+    display: none;
   }
 }

@@ -39,3 +39,8 @@ button {
   margin-right: 0.6vw;
   background-color: rgb(78, 170, 170);
 }
+@media screen and (max-width: 530px) {
+  section {
+    height: 60%;
+  }
+}
