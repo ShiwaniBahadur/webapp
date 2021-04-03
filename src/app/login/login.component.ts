@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
       //console.log(this.resData.token);
       this.router.navigate(['/profile'], {"queryParams": {id:this.id}});
       this.showMessage = true;
+      this.ngOnInit();
     }, (err)=>{
       this.errorMessage=true;
       this.error = JSON.stringify(err);

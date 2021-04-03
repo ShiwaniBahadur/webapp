@@ -24,7 +24,7 @@ mat-icon {
 }
 .below {
   display: flex;
-  width: 60%;
+  width: 80%;
   margin: auto;
 }
 .card1 {
@@ -62,13 +62,14 @@ th {
     display: unset;
   }
   .card {
-    width: 60%;
+    width: 80%;
     margin: auto;
   }
 }
 .head {
-  background-color: rgb(177, 248, 248);
-  color: rgb(16, 82, 82);
+  font-weight: bold;
+  color: #333c44;
+  margin: auto;
 }
 
 @media screen and (max-width: 427px) {
