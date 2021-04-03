@@ -87,3 +87,7 @@ th {
   color: #333c44;
   font-weight: bold;
 }
+.link {
+  margin: auto;
+  width: 100%;
+}
