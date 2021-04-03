@@ -3,11 +3,11 @@
   margin-bottom: 1vw;
 }
 mat-card {
-  width: 60%;
+  width: 80%;
   margin: auto;
 }
 form {
-  width: 60%;
+  width: 80%;
 }
 mat-toolbar {
   color: rgb(16, 82, 82);
